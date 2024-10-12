@@ -1,0 +1,12 @@
+.editor{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-top:10px;
+        background-color: rgb(40, 46, 44);
+        text-align: center;
+        width: 75%;
+        height: 100%;
+}
