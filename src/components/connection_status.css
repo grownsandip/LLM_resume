@@ -1,0 +1,23 @@
+.notification{
+          position: fixed;
+          /* top: 20px; */
+          left: 20px;
+          bottom:20px;
+          background-color: transparent;
+          text-align: center;
+          color: white;
+          font-size: medium;
+          font-weight: 600;
+          padding: 10px 20px;
+          border-radius: 5px;
+          z-index: 9999;
+          opacity: 0.9;
+          font-size: 14px;
+          transition: opacity 0.5s ease-out;
+}
+.online{
+    background-color: green;
+}
+.offline{
+    background-color: red;
+}

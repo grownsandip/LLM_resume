@@ -3,6 +3,7 @@ import "./just.css";
 import Groq from "groq-sdk";
 import pdfToText from "react-pdftotext";
 import EditorComponent from "./EditorComponent";
+import toast from "react-hot-toast";
 
 
 const Just = () => {
@@ -36,9 +37,10 @@ const Just = () => {
       if (text) {
         setExtractedText(text); 
       }
+      toast.success("Uploaded successful")
       setUploadedFile(null); 
     } else {
-      console.log("Please upload a valid PDF file.");
+      toast.error("Unsupported File format")
     }
   };
   const handlePromptSubmit = async (e) => {
@@ -67,7 +69,12 @@ const Just = () => {
         setChatText(chatResponse)
       }
     } catch (err) {
-      console.log("error generating content", err);
+      let errorMessage = "Something went wrong!"; // Default error message
+      if (err.message) {
+        // Standard JavaScript error message
+        errorMessage = err.message;
+      }
+      toast.error(errorMessage)
     }
   };
   
